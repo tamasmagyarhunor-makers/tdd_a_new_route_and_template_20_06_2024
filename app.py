@@ -1,6 +1,8 @@
 import os
 from flask import Flask, request, render_template
 from lib.database_connection import get_flask_database_connection
+from example_routes import apply_example_routes
+from pokemon_routes import apply_pokemon_routes
 
 # Create a new Flask app
 app = Flask(__name__)
@@ -23,8 +25,8 @@ def get_emoji():
 
 # This imports some more example routes for you to see how they work
 # You can delete these lines if you don't need them.
-from example_routes import apply_example_routes
 apply_example_routes(app)
+apply_pokemon_routes(app)
 
 # == End Example Code ==
 
